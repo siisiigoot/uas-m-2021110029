@@ -17,19 +17,15 @@
                         <i class="mdi mdi-account-multiple"></i>
                         <span>
                             Accounts
-                            <span class="badge badge-success float-right">6</span>
                         </span>
                     </a>
                 </li>
                 <li class="menu-title">TRANSACTIONS</li>
                 <li>
-                    <a href="javascript:void(0);" class="waves-effect">
+                    <a href="{{ route('transactions.index') }}" class="waves-effect">
                         <i class="mdi mdi-monitor-multiple"></i>
                         <span>
                             Transactions
-                            <span class="float-right menu-arrow">
-                                <span class="badge badge-success float-right">6</span>
-                            </span>
                         </span>
                     </a>
                 </li>

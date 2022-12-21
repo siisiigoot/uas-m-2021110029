@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Account extends Model
 {
     use HasFactory;
+    
+    protected $guarded = [];
+
+    public function transactions()
+    {
+        return $this->hasMany('App\Models\Transaction');
+    }
 }

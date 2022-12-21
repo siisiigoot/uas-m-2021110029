@@ -15,6 +15,8 @@ class AccountController extends Controller
     public function index()
     {
         //
+        $accounts = Account::all();
+        return view('accounts.index', compact('accounts'));
     }
 
     /**
@@ -25,6 +27,7 @@ class AccountController extends Controller
     public function create()
     {
         //
+        return view('accounts.create');
     }
 
     /**
@@ -36,6 +39,18 @@ class AccountController extends Controller
     public function store(Request $request)
     {
         //
+        $rules = [
+            'id' => 'required|unique:accounts|digits:16',
+            'nama' => 'required|max:255',
+            'jenis' => 'required',
+        ];
+
+        $validated = $request->validate($rules);
+
+        Account::create($validated);
+
+        $request->session()->flash('success',"Successfully adding - {$validated['nama']}!");
+        return redirect()->route('accounts.index');
     }
 
     /**
@@ -47,6 +62,8 @@ class AccountController extends Controller
     public function show(Account $account)
     {
         //
+        $accounts=Account::all();
+        return view('accounts.show', compact('account'));
     }
 
     /**
@@ -58,6 +75,7 @@ class AccountController extends Controller
     public function edit(Account $account)
     {
         //
+        return view('accounts.edit', compact('account'));
     }
 
     /**
@@ -70,6 +88,18 @@ class AccountController extends Controller
     public function update(Request $request, Account $account)
     {
         //
+        {
+            $rules = [
+                'id' => 'required|digits:16',
+                'nama' => 'required|max:255',
+                'jenis' => 'required',
+            ];
+            $validated = $request->validate($rules);
+            $account::where('id', [$account->id])->update($validated);
+    
+            $request->session()->flash('success',"Success updating - {$validated['nama']}!");
+            return redirect()->route('accounts.index');
+        }
     }
 
     /**
@@ -81,5 +111,7 @@ class AccountController extends Controller
     public function destroy(Account $account)
     {
         //
+        $account->delete();
+        return redirect()->route('accounts.index')->with('success',"Success delete account!");
     }
 }

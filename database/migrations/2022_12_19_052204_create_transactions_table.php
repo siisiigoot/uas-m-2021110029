@@ -15,7 +15,13 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
+            $table->string('kategori',50);
+            $table->double('nominal');
+            $table->string('tujuan');
+            $table->char('account_id',16)->nullable();
             $table->timestamps();
+
+            $table->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
         });
     }
 

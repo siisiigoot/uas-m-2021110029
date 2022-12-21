@@ -102,6 +102,7 @@
         this.initHeaderCharts();
         Waves.init();
     },
+    
 
     //init
     $.MainApp = new MainApp, $.MainApp.Constructor = MainApp

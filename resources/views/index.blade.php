@@ -4,9 +4,9 @@
 
 @section('breadcrumbs')
 <div class="page-title-box">
-    <h4 class="page-title">Responsive Table</h4>
+    <h4 class="page-title">Dashboard</h4>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item active">Welcome to Agroxa Dashboard</li>
+        <li class="breadcrumb-item active">Welcome to world.....</li>
     </ol>
 </div>
 @endsection
@@ -18,16 +18,14 @@
             <div class="card bg-primary mini-stat position-relative">
                 <div class="card-body">
                     <div class="mini-stat-desc">
-                        <h6 class="text-uppercase verti-label text-white-50">Orders</h6>
                         <div class="text-white">
-                            <h6 class="text-uppercase mt-0 text-white-50">Orders</h6>
-                            <h3 class="mb-3 mt-0">1,587</h3>
+                            <h6 class="text-uppercase mt-0 text-white-50">Accounts</h6>
+                            <h3 class="mb-3 mt-0">{{ $jumlahAccounts }}</h3>
                             <div class="">
-                                <span class="badge badge-light text-info"> +11% </span> <span class="ml-2">From previous period</span>
                             </div>
                         </div>
                         <div class="mini-stat-icon">
-                            <i class="mdi mdi-cube-outline display-2"></i>
+                            <i class="mdi mdi-account-multiple display-1"></i>
                         </div>
                     </div>
                 </div>
@@ -37,22 +35,20 @@
             <div class="card bg-primary mini-stat position-relative">
                 <div class="card-body">
                     <div class="mini-stat-desc">
-                        <h6 class="text-uppercase verti-label text-white-50">Revenue</h6>
                         <div class="text-white">
-                            <h6 class="text-uppercase mt-0 text-white-50">Revenue</h6>
-                            <h3 class="mb-3 mt-0">$46,785</h3>
+                            <h6 class="text-uppercase mt-0 text-white-50">Transactions</h6>
+                            <h3 class="mb-3 mt-0">{{ $jumlahTransactions}}</h3>
                             <div class="">
-                                <span class="badge badge-light text-danger"> -29% </span> <span class="ml-2">From previous period</span>
                             </div>
                         </div>
                         <div class="mini-stat-icon">
-                            <i class="mdi mdi-buffer display-2"></i>
+                            <i class="mdi mdi mdi-monitor-multiple display-1"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-md-6">
+        {{-- <div class="col-xl-3 col-md-6">
             <div class="card bg-primary mini-stat position-relative">
                 <div class="card-body">
                     <div class="mini-stat-desc">
@@ -70,8 +66,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xl-3 col-md-6">
+        </div> --}}
+        {{-- <div class="col-xl-3 col-md-6">
             <div class="card bg-primary mini-stat position-relative">
                 <div class="card-body">
                     <div class="mini-stat-desc">
@@ -89,7 +85,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
     <!-- end row -->
     
